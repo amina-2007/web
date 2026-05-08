@@ -1,0 +1,93 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  width: 1000px;
+  height: 1000px;
+  justify-content: center;
+  border-style: double;
+  border-color: #c4c4c4;
+}
+
+
+.picfirst {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  background-color: rgb(0, 0, 0);
+  background-size: cover;
+  background-image: url('https://avatars.mds.yandex.net/i?id=2cb25f814d408bfec848efed5478808d7f14427b-6338651-images-thumbs&n=13');
+  border-radius: 10px;
+}
+
+.picsecond {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  background-color: rgb(0, 0, 0);
+  background-image: url('https://avatars.mds.yandex.net/i?id=7792a7f18a21cc6bf15ac45d4fe36088414a17ee-10414552-images-thumbs&n=13');
+  background-size: cover;
+  border-radius: 10px;
+
+}
+
+.picthird {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  background-color: rgb(0, 0, 0); 
+  background-image: url('https://avatars.mds.yandex.net/i?id=8258aeb8379f071bb91d6c678738df015a4625cb-7465150-images-thumbs&n=13');
+justify-content: center;
+  background-size: cover;
+  border-radius: 10px;
+
+}
+
+.info {
+  grid-column: 2 / 3;
+  grid-row: 1 / 4;
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px;
+  /* text-align: justify;*/
+
+}
+
+
+
+span {
+  font-family: "DotGothic16", sans-serif;
+  font-size: 21px;
+  color:#c4c4c4;
+}
+
+p {
+  font-family: "Press Start 2P", system-ui;
+  font-size: 70px;
+  color: #c4c4c4;
+}
+
+
+
+
+body {
+  background-color: black;
+  display: grid;
+  place-items: center;
+}
+
+.ok {
+  font-family: "DotGothic16", sans-serif;
+  font-size: 15px;
+  width: 300px;
+  border-radius: 5px;
+  gap: 10px;
+  height: 35px;
+  background-color: #c4c4c4;
+}
+ 
+
+.list {
+  display: grid;
+  width: 1000px;
+  height: 1000px;
+  justify-content: center;
+  background-color: black;
+}

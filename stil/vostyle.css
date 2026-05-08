@@ -1,0 +1,93 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  width: 1000px;
+  height: 1000px;
+  justify-content: center;
+  border-style: double;
+  border-color: #777777;
+}
+
+
+.picfirst {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  background-color: rgb(0, 0, 0);
+  background-size: cover;
+  background-image: url('https://avatars.mds.yandex.net/i?id=796e1a567766fcd0fd022e5fb5658475de47b55b-8710170-images-thumbs&n=13');
+  border-radius: 10px;
+}
+
+.picsecond {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  background-color: rgb(0, 0, 0);
+  background-image: url('https://avatars.mds.yandex.net/i?id=cae7adb193fb219815e831c3936895edf82c2086-4577690-images-thumbs&n=13');
+  background-size: cover;
+  border-radius: 10px;
+
+}
+
+.picthird {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  background-color: rgb(0, 0, 0); 
+  background-image: url('https://avatars.mds.yandex.net/i?id=6b81fdd7b83e3005054be9e2c2a07042e6f810f2-4524149-images-thumbs&n=13');
+justify-content: center;
+  background-size: cover;
+  border-radius: 10px;
+
+}
+
+.info {
+  grid-column: 2 / 3;
+  grid-row: 1 / 4;
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px;
+  /* text-align: justify;*/
+
+}
+
+
+
+span {
+  font-family: "DotGothic16", sans-serif;
+  font-size: 20px;
+  color:#777777;
+}
+
+p {
+  font-family: "Press Start 2P", system-ui;
+  font-size: 70px;
+  color: #777777;
+}
+
+
+
+
+body {
+  background-color: black;
+  display: grid;
+  place-items: center;
+}
+
+.ok {
+  font-family: "DotGothic16", sans-serif;
+  font-size: 15px;
+  width: 300px;
+  border-radius: 5px;
+  gap: 10px;
+  height: 35px;
+  background-color: #777777;
+}
+ 
+
+.list {
+  display: grid;
+  width: 1000px;
+  height: 1000px;
+  justify-content: center;
+  background-color: black;
+}

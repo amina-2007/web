@@ -1,0 +1,125 @@
+
+:root {
+  --main-color: #ffffff;
+  --border-color: #ffffff;
+  --btn-bg: #ffffff;
+}
+
+body {
+  background-color: black;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+header p {
+  font-family: "Press Start 2P", system-ui;
+  font-size: 70px;
+  margin: 30px 0;
+  color: var(--main-color);
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 1 / 1;
+  justify-content: center;
+  border-style: double;
+  border-width: 5px;
+  border-color: var(--border-color);
+}
+
+.picfirst {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.picsecond {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.picthird {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.info {
+  grid-column: 2 / 3;
+  grid-row: 1 / 4;
+  background-color: black;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  align-items: flex-start;
+  overflow-y: auto;
+}
+
+.info span {
+  font-family: "DotGothic16", sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--main-color);
+}
+
+.ok {
+  font-family: "DotGothic16", sans-serif;
+  font-size: 15px;
+  width: 300px;
+  border-radius: 5px;
+  height: 35px;
+  margin-top: 20px;
+  cursor: pointer;
+  border: none;
+  color: black;
+  font-weight: bold;
+  background-color: var(--btn-bg);
+}
+ 
+@media (max-width: 700px) {
+  header p {
+    font-size: 28px;
+  }
+  
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    aspect-ratio: auto;
+    width: 95%;
+  }
+  
+  .picfirst,
+  .picsecond,
+  .picthird {
+    grid-column: 1 / 2;
+    min-height: 200px;
+  }
+  
+  .info {
+    grid-column: 1 / 2;
+    grid-row: auto;
+  }
+  
+  .ok {
+    width: 90%;
+    max-width: 300px;
+  }
+}
