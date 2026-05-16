@@ -14,9 +14,9 @@ window.addEventListener('DOMContentLoaded', function() {
   }
  
   const root = document.documentElement;
-  root.style.setProperty('--main-color', obj.mainColor);
+  root.style.setProperty('--main-color', obj.textColor);
   root.style.setProperty('--border-color', obj.borderColor);
-  root.style.setProperty('--btn-bg', obj.btnBg);
+  root.style.setProperty('--btn-bg', obj.bgColor);
  
   document.getElementById('objectTitle').textContent = obj.title;
  
@@ -30,3 +30,4 @@ window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.ok').textContent = '–Ю–Ъ, –Я–Ю–Э–ѓ–Ґ–Э–Ю';
   }
 });
+
