@@ -1,5 +1,5 @@
 .space {
-  background-image: url("https://4kwallpapers.com/images/wallpapers/stars-galaxy-3840x2160-10307.jpg");
+ /* background-image: url('planets/thebg.jpg');*/
   display: grid;
   align-items: center;
   justify-content: center;
@@ -17,12 +17,17 @@ body {
 
 header {
   background-color: black;
-  display: grid;
-  width: 5000px;
-  height: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 60em;
+  display: grid; 
+  height: 100px; 
+  width: 100%;  
+}
+
+header a+a{
+  margin-left: 200px;
+}
+
+.invisible{
+  height: 1000px;
 }
 
 .press-start-2p-regular {
@@ -86,7 +91,7 @@ button {
 }
 
 .voyager {
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Voyager_spacecraft_model.png/960px-Voyager_spacecraft_model.png');
+  background-image: url('planets/voyager.png');
   position: relative;
   border-radius: 50%;
   top: 0%;
@@ -99,7 +104,7 @@ button {
 }
 
 .vkusno {
-  background-image: url('https://free-png.ru/wp-content/uploads/2022/06/free-png.ru-441.png');
+  background-image: url('planets/vkusno.png');
   position: relative;
   border-radius: 50%;
   top: 400%;
@@ -112,7 +117,7 @@ button {
 }
 
 .volopas {
-  background-image: url('https://russian7.ru/wp-content/uploads/2021/06/7-129.jpg');
+  background-image: url('planets/volopas.png');
   position: relative;
   border-radius: 50%;
   top: 40%;
@@ -125,7 +130,7 @@ button {
 }
 
 .black {
-  background-image: url('https://static.vecteezy.com/system/resources/previews/023/816/429/non_2x/black-hole-loop-animation-on-black-background-isolated-transparent-alpha-png.png');
+  background-image: url('planets/ton618.png');
   position: relative;
   border-radius: 50%;
   top: 0%;
@@ -139,7 +144,7 @@ button {
 }
 
 .andromeda {
-  background-image: url('https://storage.googleapis.com/pod_public/1300/154247.jpg');
+  background-image: url('planets/andromeda.png');
   position: relative;
   border-radius: 50%;
   top: -300%;
@@ -162,7 +167,7 @@ button {
 
   width: 170px;
   height: 170px;
-  background-image: url('https://static.vecteezy.com/system/resources/previews/046/334/711/non_2x/bright-and-fiery-sun-surface-free-png.png');
+  background-image: url('planets/sun.png');
   background-size: cover;
 
 
@@ -181,7 +186,7 @@ button {
 .mercury {
   width: 50px;
   height: 50px;
-  background-image: url('https://pr1.zoon.ru/B1gDg_ijqxMV3tFaTyQsUQ/2400x1500,q75/W2Wjf8C0GZzMypaTHdE5_NJ5nI8x61iQoY2w7SJq5jEP5ww5cgpMiQ');
+  background-image: url('planets/mercury.png');
   animation: orbit 20s linear infinite;
 
   transform-origin: -100px -50px;
@@ -190,7 +195,7 @@ button {
 .venus {
   width: 65px;
   height: 65px;
-  background-image: url('https://filearchive.cnews.ru/img/book/2021/10/28/jupiterclipartvenusplanet5.png');
+  background-image: url('planets/venus.png');
   animation: orbit 40s linear infinite;
 
   transform-origin: -100px -100px;
@@ -199,7 +204,7 @@ button {
 .earth {
   width: 75px;
   height: 75px;
-  background-image: url('https://static.vecteezy.com/system/resources/previews/055/397/253/large_2x/earth-earth-from-space-free-png.png');
+  background-image: url('planets/earth.png');
   animation: orbit 60s linear infinite;
 
   transform-origin: -170px -170px;
@@ -208,7 +213,7 @@ button {
 .mars {
   width: 85px;
   height: 85px;
-  background-image: url('https://pushinka.top/uploads/posts/2023-08/1692488265_pushinka-top-p-planeta-mars-kartinki-pinterest-61.png');
+  background-image: url('planets/mars.png');
   animation: orbit 80s linear infinite;
 
   transform-origin: -200px -200px;
@@ -217,7 +222,7 @@ button {
 .jupiter {
   width: 100px;
   height: 100px;
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/23/Full_Jupiter.png');
+  background-image: url('planets/jupiter.png');
   animation: orbit 120s linear infinite;
 
   transform-origin: -270px -270px;
@@ -226,7 +231,7 @@ button {
 .saturn {
   width: 205px;
   height: 105px;
-  background-image: url('https://i.pinimg.com/originals/72/e6/a1/72e6a1d3df9e604a67b6e447b63276d5.png');
+  background-image: url('planets/saturn.png');
   animation: orbit 180s linear infinite;
 
   transform-origin: -300px -300px;
@@ -235,19 +240,19 @@ button {
 .uranus {
   width: 105px;
   height: 105px;
-  background-image: url('https://static.vecteezy.com/system/resources/previews/042/382/208/large_2x/ai-generated-realistic-uranus-planet-isolated-image-free-png.png');
+  background-image: url('planets/uranus.png');
   animation: orbit 240s linear infinite;
 
-  transform-origin: -350px -350px;
+  transform-origin: -450px -450px;
 }
 
 .neptune {
   width: 100px;
   height: 100px;
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/83/Full_Uranus.png');
+  background-image: url('planets/neptune.png');
   animation: orbit 300s linear infinite;
 
-  transform-origin: -400px -400px;
+  transform-origin: -550px -550px;
 }
 
 @keyframes shake {
@@ -281,4 +286,4 @@ button {
   to {
     transform: rotate(360deg);
   }
-}
+} 
