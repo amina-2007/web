@@ -1,0 +1,120 @@
+
+.press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dotgothic16-regular {
+  font-family: "DotGothic16", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+p {
+  font-family: "Press Start 2P", system-ui; 
+  font-size: 70px;
+  color: #74dcff;
+}
+
+a {
+  font-family: "DotGothic16", sans-serif;
+  font-size: 15px;
+  color: #79efff;
+}
+
+label {
+  font-family: "DotGothic16", sans-serif;
+  font-size: 40px;
+  color: #79efff;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+ .spacer {
+    flex: 1;
+} 
+
+header p {
+    margin: 0; 
+}
+
+input {
+  font-family: "DotGothic16", sans-serif;
+  font-size: 15px;
+  width: 300px;
+  border-radius: 5px;
+  height: 35px;
+}
+
+select {
+  font-family: "DotGothic16", sans-serif;
+  font-size: 15px;
+  width: 300px;
+  border-radius: 5px;
+  height: 35px;
+}
+
+button {
+  font-family: "DotGothic16", sans-serif;
+  font-size: 15px;
+  width: 300px;
+  border-radius: 5px;
+  height: 35px;
+}
+
+.maingrid{
+display: grid; 
+grid-template-rows: 1fr 1fr 1fr 1fr;
+height: 2000px;
+grid-gap: 10px;
+}
+
+.s1, .s2, .s3, .s4{
+   background-color: rgb(34, 34, 75);
+    width: 100%;
+    height: 100%;
+    border: 3px dashed  #74dcff;
+}
+
+body{
+    background-color: rgb(9, 13, 46);
+}
+
+.idk{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+grid-gap: 10px; 
+ place-items: center; 
+}
+
+.sec{
+    background-color: aquamarine;
+        width: 60%;
+    height: 80%; 
+}
+
+.brd{
+    border: 3px dashed  #74dcff; 
+    height: 90%; 
+
+}
+
+.s1-1{
+    background: url("screens/mainmenu.jpeg");
+    background-size: cover;
+    border: 2px solid #74dcff; 
+    box-shadow: -25px -25px 0px rgba(0, 0, 0, 0.3);
+    width: 100%; 
+   margin-left: 150px;
+}
+
+.invisible{
+    height: 200px;
+}
