@@ -49,3 +49,20 @@
 </body>
 
 </html>
+ 
+<script>
+function saveOrder() {
+  const fio = document.querySelector('input[placeholder*="Фамилия"]').value;
+  
+  if (fio.trim() === '') {
+    alert('Заполните ФИО!');
+    return;
+  }
+   
+  localStorage.setItem('orderPlaced', 'true');
+  localStorage.setItem('orderName', fio);
+  
+  alert('Заявка принята, ' + fio + '!');
+  window.location.href = 'index.html';
+}
+</script>

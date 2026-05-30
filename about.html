@@ -22,7 +22,11 @@
 <div class="s1 idk">
     <div class="s1-1 sec"></div>
     <div class="brd"></div>
-    <div class="s1-2 sec"></div>
+    <div class="s1-2 sec">
+        <span id="orderMessage" style="font-family:'DotGothic16',sans-serif; color:#74dcff; font-size:18px; padding:20px; display:block;">
+     
+  </span>
+</div>
 </div>
 <div class="s2 idk">    
      <div class="s2-1 sec"></div>
@@ -43,3 +47,28 @@
     <footer></footer>
 </body>
 </html>
+
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  const orderPlaced = localStorage.getItem('orderPlaced');
+  const orderName = localStorage.getItem('orderName');
+  const messageEl = document.getElementById('orderMessage');
+  
+  if (orderPlaced === 'false') {
+    messageEl.innerHTML = 
+      'О, привет, ' + orderName + '!<br><br>' +
+      'Твоя заявка на космический тур принята.<br><br>' +
+      'Мы уже готовим ракету. Жди письма на почту.<br><br>' +
+      'А пока — изучай другие объекты.';
+  } else if (visited.length === 1) {
+    const chosenPlanet = visited[0];
+    messageEl.innerHTML = 
+      'Поздравляем с вашей первой поездкой. Если после нее вы успешно<br>' +
+      'приземлились на родную планету, мы сочтем ваш отзыв за положительный. <br>' +
+      'Посетить <span style="font-size:30px; color:#fffb00;">' + chosenPlanet + '</span> было мудрым способом убежать от сессии, <br>' +
+      'но, даже улетев на край вселенной, как истинное дитя матфака, <br>'+
+      'вы должны были учесть, что сессия нематериальна и обхватывает каждый <br>'+
+      'квектометр мироздания до тех пор, пока вы не столкнетесь с ней лицом к лицу.';
+  }
+});
+</script>

@@ -1,3 +1,18 @@
+ 
+const objectId = params.get('id');
+const obj = spaceObjects.find(function(item) {
+  return item.id === objectId;
+});
+
+if (obj) { 
+  let visited = JSON.parse(localStorage.getItem('visitedPlanets')) || [];
+   
+  if (!visited.includes(obj.title)) {
+    visited.push(obj.title);
+    localStorage.setItem('visitedPlanets', JSON.stringify(visited));
+  }
+}
+
 window.addEventListener('DOMContentLoaded', function() {
   const params = new URLSearchParams(window.location.search);
   const objectId = params.get('id');
