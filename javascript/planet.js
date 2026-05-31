@@ -1,17 +1,4 @@
  
-const objectId = params.get('id');
-const obj = spaceObjects.find(function(item) {
-  return item.id === objectId;
-});
-
-if (obj) { 
-  let visited = JSON.parse(localStorage.getItem('visitedPlanets')) || [];
-   
-  if (!visited.includes(obj.title)) {
-    visited.push(obj.title);
-    localStorage.setItem('visitedPlanets', JSON.stringify(visited));
-  }
-}
 
 window.addEventListener('DOMContentLoaded', function() {
   const params = new URLSearchParams(window.location.search);
@@ -27,6 +14,7 @@ window.addEventListener('DOMContentLoaded', function() {
       'Такого космического объекта не существует в нашей базе данных.';
     return;
   }
+ 
  
   const root = document.documentElement;
   root.style.setProperty('--main-color', obj.textColor);

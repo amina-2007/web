@@ -3,36 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="stil/infostyle.css">
+      <link rel="stylesheet" href="stil/list.css">
    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
    
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <title>Список обьектов</title>
 </head>
 <body>
-    <div class="list"> 
-    <ul>
-       СОЛНЕЧНАЯ СИСТЕМА
-        <li onclick="window.location.href='info.html?id=sun'">СОЛНЦЕ  </li>
-        <li onclick="window.location.href='info.html?id=mercury'"> МЕРКУРИЙ </li>
-        <li onclick="window.location.href='info.html?id=venus'"> ВЕНЕРА </li>
-        <li onclick="window.location.href='info.html?id=earth'"> ЗЕМЛЯ </li>
-        <li onclick="window.location.href='info.html?id=mars'"> МАРС </li>
-        <li onclick="window.location.href='info.html?id=jupiter'"> ЮПИТЕР </li>
-        <li onclick="window.location.href='info.html?id=saturn'"> САТУРН </li>
-        <li onclick="window.location.href='info.html?id=uranus'"> УРАН </li>
-        <li onclick="window.location.href='info.html?id=neptune'"> НЕПТУН </li>
+     <h2>СОЛНЕЧНАЯ СИСТЕМА</h2>
+    <div class="grid">
         
+        <div class="card" onclick="window.location.href='info.html?id=mercury'">
+            <img src="stil/planets/mercury.png" alt="МЕРКУРИЙ">
+            <span>МЕРКУРИЙ</span>
+        </div>
+        <div class="card" onclick="window.location.href='info.html?id=venus'">
+            <img src="stil/planets/venus.png" alt="ВЕНЕРА">
+            <span>ВЕНЕРА</span>
+        </div>
+        <div class="card" onclick="window.location.href='info.html?id=earth'">
+            <img src="stil/planets/earth.png" alt="ЗЕМЛЯ">
+            <span>ЗЕМЛЯ</span>
+        </div>
+        <div class="card" onclick="window.location.href='info.html?id=mars'">
+            <img src="stil/planets/mars.png" alt="МАРС">
+            <span>МАРС</span>
+        </div>
 
-    </ul> 
-    <ul>ИНЫЕ ОБЬЕКТЫ
-        <li onclick="window.location.href='info.html?id=andromeda'"> ГАЛАКТИКА АНДРОМЕДА </li>
-        <li onclick="window.location.href='info.html?id=black'"> ТОН618 </li>
-        <li onclick="window.location.href='info.html?id=voyager'"> ВОЯДЖЕР-1 </li>
-        <li onclick="window.location.href='info.html?id=volopas'"> ПУСТОТА ВОЛОПАСА </li>
-        <li onclick="window.location.href='info.html?id=vkusno'"> ??? </li>
+<div class="card" onclick="window.location.href='info.html?id=sun'">
+            <img src="stil/planets/sun.png" alt="СОЛНЦЕ">
+            <span>СОЛНЦЕ</span>
+        </div>
 
-    </ul></div>
-    <button class="oklist" onclick="window.location.href='index.html'">ОК, ПОНЯТНО</button>
+        <div class="card" onclick="window.location.href='info.html?id=jupiter'">
+            <img src="stil/planets/jupiter.png" alt="ЮПИТЕР">
+            <span>ЮПИТЕР</span>
+        </div>
+        <div class="card" onclick="window.location.href='info.html?id=saturn'">
+            <img src="stil/planets/saturn.png" alt="САТУРН">
+            <span>САТУРН</span>
+        </div>
+        <div class="card" onclick="window.location.href='info.html?id=uranus'">
+            <img src="stil/planets/uranus.png" alt="УРАН">
+            <span>УРАН</span>
+        </div>
+        <div class="card" onclick="window.location.href='info.html?id=neptune'">
+            <img src="stil/planets/neptune.png" alt="НЕПТУН">
+            <span>НЕПТУН</span>
+        </div>
+    </div>
+
+    <h2>ИНЫЕ ОБЪЕКТЫ</h2>
+    <div class="grid">
+        <div class="card" onclick="window.location.href='info.html?id=andromeda'">
+            <img src="stil/planets/andromeda.png" alt="АНДРОМЕДА">
+            <span>ГАЛАКТИКА АНДРОМЕДА</span>
+        </div>
+        <div class="card" onclick="window.location.href='info.html?id=black'">
+            <img src="stil/planets/ton618.png" alt="TON 618">
+            <span>TON 618</span>
+        </div>
+        <div class="card" onclick="window.location.href='info.html?id=voyager'">
+            <img src="stil/planets/voyager.png" alt="ВОЯДЖЕР-1">
+            <span>ВОЯДЖЕР-1</span>
+        </div>
+        <div class="card" onclick="window.location.href='info.html?id=volopas'">
+            <img src="stil/planets/volopas.png" alt="ПУСТОТА ВОЛОПАСА">
+            <span>ПУСТОТА ВОЛОПАСА</span>
+        </div> 
+    </div> 
+    <button class="oklist" onclick="window.location.href='index.html'" >ОК, ПОНЯТНО</button>
 </body>
 </html>

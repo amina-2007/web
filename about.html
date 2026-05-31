@@ -23,52 +23,82 @@
     <div class="s1-1 sec"></div>
     <div class="brd"></div>
     <div class="s1-2 sec">
-        <span id="orderMessage" style="font-family:'DotGothic16',sans-serif; color:#74dcff; font-size:18px; padding:20px; display:block;">
-     
+        <span id="orderMessage" style="font-family:'DotGothic16',sans-serif; color:#74dcff; font-size:14px; padding:20px; display:block;">
+    
   </span>
 </div>
 </div>
 <div class="s2 idk">    
-     <div class="s2-1 sec"></div>
+     <div class="s2-1 sec">
+<g>Чтобы сделать заказ, перейдите на <span style="font-size:20px; color:#fffb00;">'ОФОРМИТЬ ПОЕЗДКУ '</span><br>
+и заполните некоторые данные: имя, почту, выберите планету и транспорт, и мы <br>
+гарантируем, что вся информацтя останется конфиденциальной, а <br>
+вы в скором времени посетите космос.
+</g>
+
+     </div>
     <div class="brd"></div>
     <div class="s2-2 sec"></div>
 </div>
 <div class="s3 idk">
-    <div class="s2-1 sec"></div>
+    <div class="s3-1 sec"></div>
     <div class="brd"></div>
-    <div class="s2-2 sec"></div>
+    <div class="s3-2 sec">
+
+        <g>Или же вы знаете то, чего не знаем мы? Смело <span style="font-size:20px; color:#fffb00;">добавьте планету</span> <br>
+             на общую карту. Она появится в спонтанном месте, <br>
+        но, может быть, однажды технологический прогресс достигнет такой точки, <br>
+        что выбор места будет оставаться за вами. Можете даже добавить картинку!
+        </g>
+    </div>
 </div>
 <div class="s4 idk">
-    <div class="s2-1 sec"></div>
+    <div class="s4-1 sec">
+<g>
+    Весь проект сделан для сдачи курсовой работы. <br>
+     Идея, реализация и модификации сделаны рукотворно. от 5 до 20 <br>
+     процентов работы сделаны(я честна) с помощью ИИ и гугла. В частности, <br>
+сбор информации и дебаг, а также справки по джаваскрипту. 
+</g>
+
+    </div>
     <div class="brd"></div>
-    <div class="s2-2 sec"></div>
+    <div class="s4-2 sec"></div>
 </div>
     </div>
-    <footer></footer>
-</body>
-</html>
+    <footer>  
+         <a href="https://github.com/amina-2007">ГИТХАБ </a>
+                <a href="https://github.com/amina-2007/web"> ЭТОТ ПРОЕКТ </a>
+                     <span class="spacer"></span>   
 
-<script>
+        <a href="https://github.com/amina-2007/SpaceJourney"> АДАПТАЦИЯ НА WINFORMS </a>
+                <a href="https://github.com/Marina-cpu-crypto/WriterApp">ВАМ, НАВЕРНОЕ, ПОНРАВИТСЯ </a> 
+    </footer>
+
+    
+<script> 
 window.addEventListener('DOMContentLoaded', function() {
   const orderPlaced = localStorage.getItem('orderPlaced');
-  const orderName = localStorage.getItem('orderName');
+  const visited = JSON.parse(localStorage.getItem('visitedPlanets')) || [];
   const messageEl = document.getElementById('orderMessage');
   
-  if (orderPlaced === 'false') {
+  if (!orderPlaced || orderPlaced !== 'true') { 
     messageEl.innerHTML = 
-      'О, привет, ' + orderName + '!<br><br>' +
-      'Твоя заявка на космический тур принята.<br><br>' +
-      'Мы уже готовим ракету. Жди письма на почту.<br><br>' +
-      'А пока — изучай другие объекты.';
-  } else if (visited.length === 1) {
-    const chosenPlanet = visited[0];
+      'Кажется, вы еще не оформили ни одной поездки. Самое время<br>' +
+      'сделать это, если наскучило жить на планете Земля. Индустрия<br>' +
+      'космического туризма растет, а вместе с ней неизменно вращаются<br>' +
+      'планеты Солнечной системы на главной странице сайта.';
+  } else { 
+    const chosenPlanet = visited.length > 0 ? visited[visited.length - 1] : 'какую-то планету';
     messageEl.innerHTML = 
       'Поздравляем с вашей первой поездкой. Если после нее вы успешно<br>' +
-      'приземлились на родную планету, мы сочтем ваш отзыв за положительный. <br>' +
-      'Посетить <span style="font-size:30px; color:#fffb00;">' + chosenPlanet + '</span> было мудрым способом убежать от сессии, <br>' +
-      'но, даже улетев на край вселенной, как истинное дитя матфака, <br>'+
-      'вы должны были учесть, что сессия нематериальна и обхватывает каждый <br>'+
-      'квектометр мироздания до тех пор, пока вы не столкнетесь с ней лицом к лицу.';
+      'приземлились на родную планету, мы сочтём ваш отзыв за положительный.<br><br>' +
+      'Посетить <span style="font-size:20px; color:#fffb00;">' + chosenPlanet + '</span> было мудрым способом убежать от сессии,<br>' +
+      'но, даже улетев на край вселенной, как истинные матфаковцы,<br>' +
+      'вы должны были учесть, что сессия нематериальна и охватывает каждый<br>' +
+      'квектометр мироздания до тех пор, пока вы не столкнетесь с ней лицом к лицу.<br><br>' ;
   }
-});
+}); 
 </script>
+</body>
+</html>

@@ -68,7 +68,7 @@ label {
 
 input {
   font-family: "DotGothic16", sans-serif;
-  font-size: 15px;
+  font-size: 13px;
   width: 300px;
   border-radius: 5px;
   height: 35px;
@@ -88,6 +88,7 @@ button {
   width: 300px;
   border-radius: 5px;
   height: 35px;
+  align-items: center;
 }
 
 .voyager {

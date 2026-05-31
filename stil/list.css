@@ -1,0 +1,97 @@
+body{
+    background-color: black;
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+}
+
+.press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dotgothic16-regular {
+  font-family: "DotGothic16", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+p, ul, h2 {
+  font-family: "Press Start 2P", system-ui;
+  font-size: 70px;
+  color: #74dcff;
+}
+
+a {
+  font-family: "DotGothic16", sans-serif;
+  font-size: 40px;
+  color: #79efff;
+}
+
+label, li  {
+  font-family: "DotGothic16", sans-serif;
+  font-size: 40px;
+  color: #79efff;
+}
+
+span{ 
+  font-family: "DotGothic16", sans-serif;
+  font-size: 20px;
+  color: #79efff; 
+}
+
+.cost {
+  width: 1000px;
+}
+
+input {
+  font-family: "DotGothic16", sans-serif;
+  font-size: 15px;
+  width: 300px;
+  border-radius: 5px;
+  height: 35px;
+}
+
+select {
+  font-family: "DotGothic16", sans-serif;
+  font-size: 15px;
+  width: 300px;
+  border-radius: 5px;
+  height: 35px;
+}
+
+button {
+  font-family: "DotGothic16", sans-serif;
+  font-size: 15px;
+  width: 300px;
+  border-radius: 5px;
+  height: 35px;
+}
+
+.grid{
+  display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    
+    max-width: 100vh;
+    max-height:100vh ;
+}
+
+.card{
+  width: 65%;
+  height: 65%; 
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover; 
+  filter: grayscale(100%);
+    transition: filter 1s ease;
+}
+
+.card:hover img {
+    filter: grayscale(0%);
+}
