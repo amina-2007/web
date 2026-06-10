@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stil/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-<script src="script.js"></script>
+<script src="javascript/script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 
     <title>Космическое пространство</title>
@@ -42,10 +42,54 @@
         <div class="volopas" onclick="window.location.href='info.html?id=volopas'"></div>
         <div class="vkusno" onclick="window.location.href='info.html?id=vkusno'"></div>
         <div class="voyager" onclick="window.location.href='info.html?id=voyager'"></div>
+
+        <div id="customLayer" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;"></div>
     </div>
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+    var customPlanets = JSON.parse(localStorage.getItem('customPlanets')) || [];
+    var customLayer = document.getElementById('customLayer');
+    if (!customLayer) return;
 
+   for (let i = 0; i < customPlanets.length; i++) {
+    let p = customPlanets[i];
 
+    var el = document.createElement('div');
+        el.style.position = 'absolute';
+        el.style.left = p.posX + 'px';
+        el.style.top = p.posY + 'px'; 
+el.style.width = (p.size || 80) + 'px';
+el.style.height = (p.size || 80) + 'px';
+        el.style.borderRadius = '50%';
+      el.style.backgroundImage = 'url(' + p.icon + ')';
+        el.style.backgroundSize = 'cover';
+        el.style.cursor = 'help'; 
+        el.style.transform = 'translate(-50%, -50%)';
+        el.style.pointerEvents = 'auto';
 
+        if (p.animation === 'spin') {
+            el.style.animation = 'customSpin 4s linear infinite';
+        } else if (p.animation === 'pulse') {
+            el.style.animation = 'customPulse 1.5s ease-in-out infinite';
+        } else if (p.animation === 'shake') {
+            el.style.animation = 'shake 0.5s linear infinite';
+        } else if (p.animation === 'float') {
+            el.style.animation = 'customFloat 3s ease-in-out infinite';
+        } else if (p.animation === 'glow') {
+            el.style.animation = 'customGlow 2s ease-in-out infinite';
+        }
+
+        el.title = p.title;
+        (function(planet) {
+        el.onclick = function() {
+            window.location.href = 'info.html?id=' + planet.id;
+        };
+    })(p);
+
+    customLayer.appendChild(el);
+}
+});
+</script>
 </body>
 
 </html>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="stil/list.css">
    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<script src="javascript/backend.js"></script>
    
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <title>Список обьектов</title>
@@ -73,5 +74,30 @@
         </div> 
     </div> 
     <button class="oklist" onclick="window.location.href='index.html'" >ОК, ПОНЯТНО</button>
+
+    <script>
+window.addEventListener('DOMContentLoaded', function() {
+    var customPlanets = JSON.parse(localStorage.getItem('customPlanets')) || [];
+    var otherGrid = document.querySelectorAll('.grid')[1]; 
+    
+    if (!otherGrid || customPlanets.length === 0) return;
+    
+    for (var i = 0; i < customPlanets.length; i++) {
+        var p = customPlanets[i];
+        
+        var card = document.createElement('div');
+        card.className = 'card';
+        card.onclick = function() {
+            window.location.href = 'info.html?id=' + p.id;
+        };
+        
+        card.innerHTML = 
+            '<img src="' + (p.icon || p.pics[0]) + '" alt="' + p.title + '">' +
+            '<span>' + p.title + '</span>';
+        
+        otherGrid.appendChild(card);
+    }
+});
+</script>
 </body>
 </html>

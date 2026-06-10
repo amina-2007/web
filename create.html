@@ -3,9 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stil/creation.css"> 
+    <script src="javascript/create.js"></script>
+    <title>СОЗДАТЬ ПЛАНЕТУ?</title>
 </head>
 <body>
+     <p>ДОБАВИТЬ ПЛАНЕТУ</p>
     
+    <label>НАЗВАНИЕ</label>
+    <input type="text" id="planetName" placeholder="Моя планета" required>
+    
+    <label>ИКОНКА (ссылка)</label>
+    <input type="text" id="planetImage" placeholder="https://..." oninput="previewImage()">
+    <div class="preview" id="preview"></div>
+    
+    <label>КАРТИНКА 1 (необязательно)</label>
+    <input type="text" id="planetImage1" placeholder="https://...">
+    <label>КАРТИНКА 2 (необязательно)</label>
+    <input type="text" id="planetImage2" placeholder="https://...">
+    <label>КАРТИНКА 3 (необязательно)</label>
+    <input type="text" id="planetImage3" placeholder="https://...">
+    
+    <label>ОПИСАНИЕ</label>
+    <textarea id="planetInfo" placeholder="Опишите вашу планету..."></textarea>
+    
+<label>ЦВЕТ ОФОРМЛЕНИЯ</label>
+<input type="color" id="planetColor" value="#74dcff">
+
+<label>РАЗМЕР ИКОНКИ (px)</label>
+<input type="range" id="planetSize" min="40" max="200" value="80" oninput="document.getElementById('sizeValue').textContent = this.value + 'px'">
+<span id="sizeValue">80px</span>
+
+    <label>АНИМАЦИЯ</label>
+    <select id="planetAnimation">
+        <option value="none">Без анимации</option>
+        <option value="spin">Вращение</option>
+        <option value="pulse">Пульсация</option>
+        <option value="shake">Тряска</option>
+        <option value="float">Парение вверх-вниз</option>
+        <option value="glow">Свечение</option>
+    </select>
+    
+    <br>
+    <button onclick="addPlanet()"  >ДОБАВИТЬ НА КАРТУ</button>
+    <button onclick="window.location.href='index.html'"  >В МЕНЮ</button>
 </body>
 </html>

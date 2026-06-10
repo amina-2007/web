@@ -1,35 +1,41 @@
- 
-
 window.addEventListener('DOMContentLoaded', function() {
-  const params = new URLSearchParams(window.location.search);
-  const objectId = params.get('id');
+    const params = new URLSearchParams(window.location.search);
+    const objectId = params.get('id');
+ 
+    var customPlanets = JSON.parse(localStorage.getItem('customPlanets')) || [];
+    var allObjects = spaceObjects.concat(customPlanets);
+    
+    const obj = allObjects.find(function(item) {
+        return item.id === objectId;
+    });
 
-  const obj = spaceObjects.find(function(item) {
-    return item.id === objectId;
-  });
+    if (!obj) {
+        document.getElementById('objectTitle').textContent = 'ОБЪЕКТ НЕ НАЙДЕН';
+        document.getElementById('objectInfo').textContent =
+            'Такого космического объекта не существует в нашей базе данных.';
+        return;
+    }
+ 
+    let visited = JSON.parse(localStorage.getItem('visitedPlanets')) || [];
+    if (!visited.includes(obj.title)) {
+        visited.push(obj.title);
+        localStorage.setItem('visitedPlanets', JSON.stringify(visited));
+    }
+ 
+    const root = document.documentElement;
+  root.style.setProperty('--main-color', obj.mainColor || obj.textColor || '#ffffff');
+root.style.setProperty('--border-color', obj.borderColor || '#ffffff');
+root.style.setProperty('--btn-bg', obj.btnBg || obj.bgColor || '#ffffff');
 
-  if (!obj) {
-    document.getElementById('objectTitle').textContent = 'ОБЪЕКТ НЕ НАЙДЕН';
-    document.getElementById('objectInfo').textContent =
-      'Такого космического объекта не существует в нашей базе данных.';
-    return;
-  }
- 
- 
-  const root = document.documentElement;
-  root.style.setProperty('--main-color', obj.textColor);
-  root.style.setProperty('--border-color', obj.borderColor);
-  root.style.setProperty('--btn-bg', obj.bgColor); 
-  document.getElementById('objectTitle').textContent = obj.title;
- 
-  document.getElementById('pic1').style.backgroundImage = 'url(' + obj.pics[0] + ')';
-  document.getElementById('pic2').style.backgroundImage = 'url(' + obj.pics[1] + ')';
-  document.getElementById('pic3').style.backgroundImage = 'url(' + obj.pics[2] + ')';
- 
-document.getElementById('objectInfo').innerHTML = obj.info.replace(/\n/g, '<br>');
- 
-  if (obj.id === 'vkusno') {
-    document.querySelector('.ok').textContent = '–Ю–Ъ, –Я–Ю–Э–ѓ–Ґ–Э–Ю';
-  }
+    document.getElementById('objectTitle').textContent = obj.title;
+
+    document.getElementById('pic1').style.backgroundImage = 'url(' + obj.pics[0] + ')';
+    document.getElementById('pic2').style.backgroundImage = 'url(' + obj.pics[1] + ')';
+    document.getElementById('pic3').style.backgroundImage = 'url(' + obj.pics[2] + ')';
+
+    document.getElementById('objectInfo').innerHTML = obj.info.replace(/\n/g, '<br>');
+
+    if (obj.id === 'vkusno') {
+        document.querySelector('.ok').textContent = '–Ю–Ъ, –Я–Ю–Э–ѓ–Ґ–Э–Ю';
+    }
 });
-

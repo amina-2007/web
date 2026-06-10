@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stil/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
+ 
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <title>Оформить поездку</title>
 </head>
@@ -56,7 +56,9 @@ document.getElementById('orderForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
     var nik = document.getElementById('nik').value;
+    var email = document.getElementById('email').value;
     var planet = document.getElementById('planet').value;
+    var rocket = document.getElementById('rocket').value;
     
     if (nik.trim() === '') {
         alert('Заполните НИК!');
@@ -67,28 +69,21 @@ document.getElementById('orderForm').addEventListener('submit', function(e) {
     localStorage.setItem('orderName', nik);
      
     var planetNames = {
-        'mercury': 'МЕРКУРИЙ',
-        'venus': 'ВЕНЕРА',
-        'earth': 'ЗЕМЛЯ',
-        'mars': 'MAPC',
-        'jupiter': 'ЮПИТЕР',
-        'saturn': 'CATУРН',
-        'uranus': 'УРАН',
-        'neptune': 'НЕПТУН',
-        'andromeda': 'АНДРОМЕДА',
-        'ton618': 'TON618',
-        'volopas': 'ПУСТОТА ВОЛОПАСА'
+        'mercury': 'МЕРКУРИЙ', 'venus': 'ВЕНЕРА', 'earth': 'ЗЕМЛЯ',
+        'mars': 'MAPC', 'jupiter': 'ЮПИТЕР', 'saturn': 'CATУРН',
+        'uranus': 'УРАН', 'neptune': 'НЕПТУН', 'andromeda': 'АНДРОМЕДА',
+        'ton618': 'TON618', 'volopas': 'ПУСТОТА ВОЛОПАСА'
     };
-    
     var planetName = planetNames[planet] || planet;
     
     var visited = JSON.parse(localStorage.getItem('visitedPlanets')) || [];
-    if (!visited.includes(planetName)) {
+    if (visited.indexOf(planetName) === -1) {
         visited.push(planetName);
         localStorage.setItem('visitedPlanets', JSON.stringify(visited));
     }
     
-    alert('Заявка принята, ' + nik + '! Вы летите на ' + planetName + '. Конечно же, данные сохранены.'); 
+    alert('Заявка принята, ' + nik + '! Вы летите на ' + planetName + '.');
+    window.location.href = 'index.html';
 });
 </script>
 </html>

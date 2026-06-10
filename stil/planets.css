@@ -34,6 +34,7 @@ header p {
   border-width: 5px;
   border-color: var(--border-color);
 }
+ 
 
 .picfirst {
   grid-column: 1 / 2;
