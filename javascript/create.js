@@ -60,9 +60,9 @@ function addPlanet() {
     }
  
     var pics = [
-        image1 || image || "images/defaults.png",
-        image2 || image || "images/defaults.png",
-        image3 || image || "images/defaults.png"
+        image1 || image1 || "images/defaults.png",
+        image2 || image2 || "images/defaults.png",
+        image3 || image3 || "images/defaults.png"
     ];
  
     var newPlanet = {
