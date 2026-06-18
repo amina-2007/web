@@ -45,28 +45,32 @@
 
         <div id="customLayer" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;"></div>
     </div>
-<script>
+<script> 
 window.addEventListener('DOMContentLoaded', function() {
     var customPlanets = JSON.parse(localStorage.getItem('customPlanets')) || [];
+    console.log('Загружено пользовательских планет:', customPlanets.length);
+    
     var customLayer = document.getElementById('customLayer');
     if (!customLayer) return;
 
-   for (let i = 0; i < customPlanets.length; i++) {
-    let p = customPlanets[i];
+    for (let i = 0; i < customPlanets.length; i++) {
+        let p = customPlanets[i];
+        console.log('Добавляем:', p.title, 'позиция:', p.posX, p.posY);
 
-    var el = document.createElement('div');
+        var el = document.createElement('div');
         el.style.position = 'absolute';
         el.style.left = p.posX + 'px';
-        el.style.top = p.posY + 'px'; 
-el.style.width = (p.size || 80) + 'px';
-el.style.height = (p.size || 80) + 'px';
+        el.style.top = p.posY + 'px';
+        el.style.width = (p.size || 80) + 'px';
+        el.style.height = (p.size || 80) + 'px';
         el.style.borderRadius = '50%';
-      el.style.backgroundImage = 'url(' + p.icon + ')';
+        el.style.backgroundImage = 'url(' + p.icon + ')';
         el.style.backgroundSize = 'cover';
-        el.style.cursor = 'help'; 
+        el.style.backgroundPosition = 'center';
+        el.style.cursor = 'help';
         el.style.transform = 'translate(-50%, -50%)';
         el.style.pointerEvents = 'auto';
-
+ 
         if (p.animation === 'spin') {
             el.style.animation = 'customSpin 4s linear infinite';
         } else if (p.animation === 'pulse') {
@@ -80,14 +84,14 @@ el.style.height = (p.size || 80) + 'px';
         }
 
         el.title = p.title;
-        (function(planet) {
-        el.onclick = function() {
-            window.location.href = 'info.html?id=' + planet.id;
-        };
-    })(p);
+        el.onclick = (function(planet) {
+            return function() {
+                window.location.href = 'info.html?id=' + planet.id;
+            };
+        })(p);
 
-    customLayer.appendChild(el);
-}
+        customLayer.appendChild(el);
+    }
 });
 </script>
 </body>

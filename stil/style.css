@@ -12,10 +12,11 @@ transform-origin: top center;
 
 body {
 
-  background-image: url("https://4kwallpapers.com/images/wallpapers/stars-galaxy-3840x2160-10307.jpg");
+  background-image: url("planets/thebg.jpg");
 }
 
 header {
+  place-items: center;
   background-color: black;
   display: grid; 
   height: 100px; 
@@ -42,6 +43,10 @@ header a+a{
   font-style: normal;
 }
 
+  .log{
+       display: grid;  
+    place-items: center;
+  }
 
 p {
   font-family: "Press Start 2P", system-ui;
@@ -60,10 +65,13 @@ label {
   font-size: 40px;
   color: #79efff;
 }
-
-
+ 
 .cost {
-  width: 1000px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 20px;
 }
 
 input {
